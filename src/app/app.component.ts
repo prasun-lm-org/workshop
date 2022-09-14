@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'work-shop';
+  title = 'Work-shop practical';
+
+  totalCount:number = 1;
+
+  setTotalCount(totalCount: number) {
+      this.totalCount = totalCount;
+  }
 }

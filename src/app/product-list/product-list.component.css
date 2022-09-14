@@ -1,0 +1,31 @@
+.product-list{
+    float: left;
+    border: 2px solid;
+    padding: 1%;
+    width: 42%;
+    margin: 0 0 0 5%;
+    text-align: center;
+    border-radius: 3px;
+}
+
+ul.products li .price{
+    color: black;
+    line-height: 1.7em;
+}
+
+ul.products li .plus{
+    float: right;
+    font-size: small;
+    color: white;
+    padding: 3px 10px;
+    background-color:darkblue;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .product-list{
+        width: 87%;
+        margin-bottom: 10px;
+    }
+}

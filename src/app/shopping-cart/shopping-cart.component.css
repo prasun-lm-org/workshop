@@ -1,0 +1,28 @@
+.shopping-cart{
+    float: right;
+    border: 2px solid;
+    padding: 1%;
+    width: 42%;
+    margin: 0 5% 0 0;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.shopping-cart .empty{
+    background-color: darkblue;
+    color: white;
+    border-radius: 3px;
+    border: none;
+    padding: 0.5em 1em;
+    margin: 10px 0 0 0;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .shopping-cart{
+        float: none;
+        width: 87%;
+        margin: 0 0 0 5%;
+        clear: both;
+    }
+}

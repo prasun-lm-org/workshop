@@ -1,0 +1,10 @@
+<div class="product-list">
+    {{title}}
+
+    <ul class="products">
+        <li *ngFor="let product of products">
+            {{product.name | titlecase}} <span class="plus" (click)="onClick(product)">+</span>
+            <div class="price">{{product.price | currency:'USD'}}</div>
+        </li>
+    </ul>
+</div>

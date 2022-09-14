@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+h1 {
+    text-decoration: underline;
+}
+
+ul.products li{
+    list-style: none;
+    border: 2px solid darkblue;
+    padding: 3%;
+    margin: 0 0 10px -35px;
+    color: darkblue;
+    border-radius: 3px;
+}

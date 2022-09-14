@@ -1,0 +1,11 @@
+<div class="shopping-cart">
+    {{title}} 
+    <div *ngIf="cartService.cartProducts.length">({{totalCount}})
+        <ul class="products">
+            <li *ngFor="let cartProduct of cartService.cartProducts;">
+                {{cartProduct.name | titlecase}} <input #quantity type="number" value="{{cartProduct.quantity}}" (change)="onChange(quantity.value, cartProduct)"/>
+            </li>
+        </ul>
+        <button class="empty" (click)="cartService.empty()">Empty Cart</button>
+    </div>
+</div>
