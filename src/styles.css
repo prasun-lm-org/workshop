@@ -3,6 +3,11 @@ h1 {
     text-decoration: underline;
 }
 
+.title{
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
 ul.products li{
     list-style: none;
     border: 2px solid darkblue;

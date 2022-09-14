@@ -18,7 +18,6 @@ export class CartService {
     } else {
       chkProductExistInCart.quantity = Number(chkProductExistInCart.quantity) + 1;
     }
-    
   }
 
   remove(product: Product) {

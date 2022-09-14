@@ -7,15 +7,15 @@ import { CartService } from '../cart.service';
   styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
-  title:string = '';
+  title:string = 'Shopping Cart';
   quantity:number = 0;
   @Input() totalCount:number = 1;
 
+  cartEmpty:string = "Shopping cart is empty!";
+
   constructor(public cartService: CartService) { }
 
-  ngOnInit(): void {
-    this.title = 'Shopping Cart';
-  }
+  ngOnInit(): void {}
 
   onChange(quantity:string, product:any): void {
 

@@ -9,7 +9,7 @@ import { CartService } from '../cart.service';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  title:string = '';
+  title:string = 'Product List';
   products: Product[] = [];
   totalCount:number = 0;
 
@@ -18,8 +18,6 @@ export class ProductListComponent implements OnInit {
   constructor(private productService: ProductService, private cartService: CartService) { }
 
   ngOnInit(): void {
-    this.title = 'Product List';
-
     this.getProducts();
   }
 

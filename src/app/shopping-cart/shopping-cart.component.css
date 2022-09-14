@@ -9,6 +9,10 @@
 }
 
 .shopping-cart .empty{
+    padding: 10px;
+}
+
+.shopping-cart .emptyBtn{
     background-color: darkblue;
     color: white;
     border-radius: 3px;
@@ -16,6 +20,14 @@
     padding: 0.5em 1em;
     margin: 10px 0 0 0;
     cursor: pointer;
+}
+
+.shopping-cart .quantity{
+    width: 10%;
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 3px;
+    margin: 0 0 0 1.5em;
 }
 
 @media screen and (max-width: 600px) {
