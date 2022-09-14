@@ -12,8 +12,10 @@ export class ProductListComponent implements OnInit {
   title:string = 'Product List';
   products: Product[] = [];
   totalCount:number = 0;
+  totalPrice:number = 0;
 
   @Output() totalCountEvent = new EventEmitter<number>();
+  @Output() totalPriceEvent = new EventEmitter<number>();
 
   constructor(private productService: ProductService, private cartService: CartService) { }
 
@@ -29,13 +31,10 @@ export class ProductListComponent implements OnInit {
   onClick(product: Product): void {
     this.cartService.add(product);
 
-    this.totalCount = 0;
-    for (let cartProduct of this.cartService.cartProducts) {
-      if(cartProduct.quantity){
-        this.totalCount += cartProduct.quantity;
-      }
-    }
-
+    this.totalCount = this.cartService.getTotalCount();
+    this.totalPrice = this.cartService.getTotalPrice();
+    
     this.totalCountEvent.emit(this.totalCount);
+    this.totalPriceEvent.emit(this.totalPrice);
   }
 }

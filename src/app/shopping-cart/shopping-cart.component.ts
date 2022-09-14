@@ -9,7 +9,9 @@ import { CartService } from '../cart.service';
 export class ShoppingCartComponent implements OnInit {
   title:string = 'Shopping Cart';
   quantity:number = 0;
+
   @Input() totalCount:number = 1;
+  @Input() totalPrice:number = 0;
 
   cartEmpty:string = "Shopping cart is empty!";
 
@@ -18,24 +20,12 @@ export class ShoppingCartComponent implements OnInit {
   ngOnInit(): void {}
 
   onChange(quantity:string, product:any): void {
+    this.cartService.update(Number(quantity), product);
 
-    if(Number(quantity) > product.quantity){
-      product.quantity++; 
-    } 
-    if(Number(quantity) < product.quantity){
-      product.quantity--; 
-    } 
+    this.cartService.remove(Number(quantity), product);
 
-    if(Number(quantity) === 0){
-      this.cartService.remove(product);
-    }
-
-    this.totalCount = 0;
-    for (let cartProduct of this.cartService.cartProducts) {
-      if(cartProduct.quantity){
-        this.totalCount += cartProduct.quantity;
-      }
-    }
+    this.totalCount = this.cartService.getTotalCount();
+    this.totalPrice = this.cartService.getTotalPrice();
   }
 
 }

@@ -1,3 +1,13 @@
 <h1>{{title}}</h1>
-<app-product-list (totalCountEvent)="setTotalCount($event)"></app-product-list>
-<app-shopping-cart [totalCount]="totalCount"></app-shopping-cart>
+
+<app-product-list 
+    (totalCountEvent)="setTotalCount($event)" 
+    (totalPriceEvent)="setTotalPrice($event)"
+>
+</app-product-list>
+
+<app-shopping-cart 
+    [totalCount]="totalCount"
+    [totalPrice]="totalPrice"
+>
+</app-shopping-cart>

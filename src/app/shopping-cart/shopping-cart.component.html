@@ -11,6 +11,7 @@
                 (change)="onChange(quantity.value, cartProduct)"/>
             </li>
         </ul>
+        <div>Total Price: {{totalPrice | currency:'USD'}}</div>
         <button class="emptyBtn" (click)="cartService.empty()">Empty Cart</button>
     </div>
     <div *ngIf="!cartService.cartProducts.length" class="empty">

@@ -8,6 +8,7 @@ export class CartService {
 
   cartProducts: Product[] = [];
   totalCount:number = 0;
+  totalPrice:number = 0;
 
   constructor() { }
 
@@ -20,14 +21,45 @@ export class CartService {
     }
   }
 
-  remove(product: Product) {
-    const index = this.cartProducts.indexOf(product, 0);
-    if (index > -1) {
-      this.cartProducts.splice(index, 1);
+  update(quantity:number, product: any) {
+    if(quantity > product.quantity){
+      product.quantity++; 
+    } 
+    if(quantity < product.quantity){
+      product.quantity--; 
+    } 
+  }
+
+  remove(quantity:number, product: Product) {
+    if(quantity === 0) {
+      const index = this.cartProducts.indexOf(product, 0);
+      if (index > -1) {
+        this.cartProducts.splice(index, 1);
+      }
     }
   }
 
   empty() {
     this.cartProducts = [];
   } 
+
+  getTotalCount() : number{
+    this.totalCount = 0;
+    for (let cartProduct of this.cartProducts) {
+      if(cartProduct.quantity){
+        this.totalCount += cartProduct.quantity;
+      }
+    }
+    return this.totalCount;
+  }
+
+  getTotalPrice() : number{
+    this.totalPrice = 0;
+    for (let cartProduct of this.cartProducts) {
+      if(cartProduct.quantity){
+        this.totalPrice += cartProduct.quantity*cartProduct.price;
+      }
+    }
+    return this.totalPrice;
+  }
 }
