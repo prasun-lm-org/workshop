@@ -3,7 +3,7 @@
 
     <ul class="products">
         <li *ngFor="let product of products">
-            {{product.name | titlecase}} <span class="plus" (click)="onClick(product)">+</span>
+            {{product.name | titlecase}} <span class="btn plus" (click)="onClick(product)" title="Add to Cart">+</span>
             <div class="price">{{product.price | currency:'USD'}}</div>
         </li>
     </ul>

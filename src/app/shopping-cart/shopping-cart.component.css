@@ -13,13 +13,7 @@
 }
 
 .shopping-cart .emptyBtn{
-    background-color: darkblue;
-    color: white;
-    border-radius: 3px;
-    border: none;
-    padding: 0.5em 1em;
     margin: 10px 0 0 0;
-    cursor: pointer;
 }
 
 .shopping-cart .quantity{
@@ -31,6 +25,11 @@
     background: none;
     border: none;
     cursor: pointer;
+    color: black;
+}
+
+.shopping-cart .arrowBtn:hover{
+    color:darkgray;
 }
 
 .shopping-cart .btnDiv{

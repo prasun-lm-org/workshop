@@ -12,17 +12,17 @@
                 <div class="btnDiv">
                     <table border="0" cellspacing="0" cellpadding="0" >
                         <tr>
-                            <td><button class="arrowBtn" (click)="onUp(cartProduct)">&#9650;</button></td>
+                            <td><button class="arrowBtn" (click)="onUp(cartProduct)" title="Increse Quantity">&#9650;</button></td>
                         </tr>
                         <tr>
-                            <td><button class="arrowBtn" (click)="onDown(cartProduct)">&#9660;</button></td>
+                            <td><button class="arrowBtn" (click)="onDown(cartProduct)" title="Decrease Quantity">&#9660;</button></td>
                         </tr>
                     </table>
                 </div>
             </li>
         </ul>
         <div>Total Price: {{totalPrice | currency:'USD'}}</div>
-        <button class="emptyBtn" (click)="cartService.empty()">Empty Cart</button>
+        <button class="btn emptyBtn" (click)="cartService.empty()">Empty Cart</button>
     </div>
     <div *ngIf="!cartService.cartProducts.length" class="empty">
         {{cartEmpty}} 
