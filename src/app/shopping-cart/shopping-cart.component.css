@@ -24,10 +24,19 @@
 
 .shopping-cart .quantity{
     width: 10%;
-    border: 1px solid;
-    border-radius: 3px;
-    padding: 3px;
-    margin: 0 0 0 1.5em;
+}
+
+.shopping-cart .arrowBtn{
+    cursor: pointer;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.shopping-cart .btnDiv{
+    display: inline-block;
+    position: absolute;
+    margin: -8px 0 0 0;
 }
 
 @media screen and (max-width: 600px) {

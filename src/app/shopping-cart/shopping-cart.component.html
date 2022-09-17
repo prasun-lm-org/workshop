@@ -9,6 +9,16 @@
                 <input #quantity type="number" class="quantity"
                 value="{{cartProduct.quantity}}" title="{{cartProduct.quantity}}"
                 (change)="onChange(quantity.value, cartProduct)"/>
+                <div class="btnDiv">
+                    <table border="0" cellspacing="0" cellpadding="0" >
+                        <tr>
+                            <td><button class="arrowBtn" (click)="onUp(cartProduct)">&#9650;</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="arrowBtn" (click)="onDown(cartProduct)">&#9660;</button></td>
+                        </tr>
+                    </table>
+                </div>
             </li>
         </ul>
         <div>Total Price: {{totalPrice | currency:'USD'}}</div>

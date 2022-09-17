@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Product } from '../product';
 import { CartService } from '../cart.service';
 
 @Component({
@@ -19,10 +20,24 @@ export class ShoppingCartComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onChange(quantity:string, product:any): void {
+  onChange(quantity:string, product:Product): void {
     this.cartService.update(Number(quantity), product);
 
     this.cartService.remove(Number(quantity), product);
+
+    this.totalCount = this.cartService.getTotalCount();
+    this.totalPrice = this.cartService.getTotalPrice();
+  }
+
+  onUp(product: Product): void {
+    this.cartService.add(product);
+
+    this.totalCount = this.cartService.getTotalCount();
+    this.totalPrice = this.cartService.getTotalPrice();
+  }
+
+  onDown(product: Product): void {
+    this.cartService.removeProduct(product);
 
     this.totalCount = this.cartService.getTotalCount();
     this.totalPrice = this.cartService.getTotalPrice();

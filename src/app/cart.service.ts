@@ -21,13 +21,20 @@ export class CartService {
     }
   }
 
-  update(quantity:number, product: any) {
-    if(quantity > product.quantity){
-      product.quantity++; 
-    } 
-    if(quantity < product.quantity){
-      product.quantity--; 
-    } 
+  update(quantity:number, product: Product) {
+    if(product.quantity){
+      if(quantity > product.quantity){
+        product.quantity++; 
+      } 
+      if(quantity < product.quantity){
+        product.quantity--; 
+      } 
+    }
+  }
+
+  removeProduct(product: Product) {
+    product.quantity = Number(product.quantity) - 1;
+    this.remove(product.quantity, product);
   }
 
   remove(quantity:number, product: Product) {
